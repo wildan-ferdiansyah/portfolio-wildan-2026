@@ -40,7 +40,8 @@ export default function Sidebar() {
           </Tooltip>
         </div>
         <p className="text-center text-gray-500 text-sm ">@wildanferdiansyah</p>
-        <div className="flex items-center gap-3 justify-center mt-6">
+        <div className="flex items-center gap-3 justify-around mt-6">
+          <div></div>
           <ThemeToggle />
         </div>
         <Separator className="my-3" />
@@ -56,7 +57,7 @@ export default function Sidebar() {
                 className={cn(
                   "group rounded-lg px-3 py-2 flex items-center gap-2 transition-colors text-base",
                   isActive
-                    ? "bg-teal-400 dark:bg-teal-6   00 text-white"
+                    ? "bg-teal-400 ddark:ark:bg-teal-600 text-white"
                     : "hover:bg-gray-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-gray-400 hover:scale-105 transition-all ease-in-out hover:font-medium",
                 )}
               >
@@ -77,8 +78,8 @@ export default function Sidebar() {
         </nav>
         <Separator className="my-3" />
         <div>
-          <p className="text-sm text-center text-gray-300">Hak Cipta &copy; {new Date().getFullYear()}</p>
-          <p className="text-sm text-center mt-2 text-gray-300">Wildan Ferdiansyah. Seluruh hak cipta dilindungi undang-undang.</p>
+          <p className="text-sm text-center dark:text-gray-300">Hak Cipta &copy; {new Date().getFullYear()}</p>
+          <p className="text-sm text-center mt-2 dark:text-gray-300">Wildan Ferdiansyah. Seluruh hak cipta dilindungi undang-undang.</p>
         </div>
       </aside>
     </header>
