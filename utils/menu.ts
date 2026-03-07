@@ -1,4 +1,4 @@
-import { Code, Home, LucideIcon, Share2, Star, User } from "lucide-react";
+import {  CodeXml, Home, LucideIcon, Share2, Star, User } from "lucide-react";
 
 type Menu = {
   title: string;
@@ -12,8 +12,8 @@ export const Menus: Menu[] = [
     icon: Home,
   },
   {
-    title: "Tentang",
-    href: "/tentang",
+    title: "Tentang Saya",
+    href: "/tentang-saya",
     icon: User,
   },
   {
@@ -24,7 +24,7 @@ export const Menus: Menu[] = [
   {
     title: "Proyek",
     href: "/proyek",
-    icon: Code,
+    icon: CodeXml,
   },
   {
     title: "Kontak",

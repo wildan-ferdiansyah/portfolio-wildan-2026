@@ -7,11 +7,12 @@ import { Separator } from "../ui/separator";
 import { Menus } from "@/utils/menu";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
 
 export default function Sidebar() {
   const pathname = usePathname();
   return (
-    <header className="w-full max-w-65">
+    <header className="w-full max-w-65 sticky top-14 h-fit">
       <aside>
         <Image
           src="/myprofil.jpeg"
@@ -53,33 +54,43 @@ export default function Sidebar() {
               <Link
                 href={menu.href}
                 key={menu.title}
-    
                 className={cn(
-                  "group rounded-lg px-3 py-2 flex items-center gap-2 transition-colors text-base",
+                  "group rounded-lg px-3 py-2 flex items-center justify-between gap-2 transition-colors text-base",
                   isActive
-                    ? "bg-teal-400 ddark:ark:bg-teal-600 text-white"
+                    ? "bg-teal-400 dark:bg-teal-600 text-white"
                     : "hover:bg-gray-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-gray-400 hover:scale-105 transition-all ease-in-out hover:font-medium",
                 )}
               >
-                <Icon
-                  size={20}
-                  className={cn(
-                    "transition-transform duration-300 ease-in-out inline-block",
-                    isActive
-                      ? "text-white"
-                      : 
-                        "text-zinc-700 group-hover:-rotate-45 dark:text-gray-400",
-                  )}
-                />
-                <span>{menu.title}</span>
+                <div className="flex items-center gap-2">
+                  <Icon
+                    size={20}
+                    className={cn(
+                      "transition-transform duration-300 ease-in-out inline-block",
+                      isActive
+                        ? "text-white"
+                        : "text-zinc-700 group-hover:-rotate-45 dark:text-gray-400",
+                    )}
+                  />
+                  <span>{menu.title}</span>
+                </div>
+                {isActive && (
+                  <ArrowRight
+                    size={20}
+                    className={cn(isActive && "text-white")}
+                  />
+                )}
               </Link>
             );
           })}
         </nav>
         <Separator className="my-3" />
         <div>
-          <p className="text-sm text-center dark:text-gray-300">Hak Cipta &copy; {new Date().getFullYear()}</p>
-          <p className="text-sm text-center mt-2 dark:text-gray-300">Wildan Ferdiansyah. Seluruh hak cipta dilindungi undang-undang.</p>
+          <p className="text-sm text-center dark:text-gray-300">
+            Hak Cipta &copy; {new Date().getFullYear()}
+          </p>
+          <p className="text-sm text-center mt-2 dark:text-gray-300">
+            Wildan Ferdiansyah. Seluruh hak cipta dilindungi undang-undang.
+          </p>
         </div>
       </aside>
     </header>
