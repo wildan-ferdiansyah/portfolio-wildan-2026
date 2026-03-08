@@ -1,4 +1,4 @@
-import {  CodeXml, Home, LucideIcon, Share2, Star, User } from "lucide-react";
+import {  CodeXml, Contact, Home, LucideIcon, Share2, Star, User } from "lucide-react";
 
 type Menu = {
   title: string;
@@ -29,6 +29,6 @@ export const Menus: Menu[] = [
   {
     title: "Kontak",
     href: "/kontak",
-    icon: Share2,
+    icon: Contact,
   },
 ];

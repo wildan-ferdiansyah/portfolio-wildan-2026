@@ -3,7 +3,9 @@ import PendidikanList from "@/components/ui/pendidikan-list";
 import { Separator } from "@/components/ui/separator";
 import { BriefcaseBusiness, GraduationCap } from "lucide-react";
 
+
 export default function TentangSaya() {
+  
   return (
     <section>
       <div>
@@ -11,6 +13,7 @@ export default function TentangSaya() {
         <ul className="flex items-center gap-6 mt-3 text-gray-600 dark:text-gray-400">
           <li>Deskripsi tentang saya</li>
         </ul>
+        <Separator className="my-6" />
         <h1 className="mt-8 leading-7 text-gray-800 dark:text-gray-300">
           Saya Muhammad Wildan Ferdiansyah. Saya merupakan lulusan Institut
           Widya Pratama jurusan Sistem Informasi dengan IPK 3.80. Latar belakang

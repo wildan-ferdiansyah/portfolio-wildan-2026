@@ -1,4 +1,4 @@
-import { ExperienceData } from "@/components/ui/card-karier";
+import { ExperienceData } from "@/components/card/card-karier";
 
 const experiences: ExperienceData[] = [
   {

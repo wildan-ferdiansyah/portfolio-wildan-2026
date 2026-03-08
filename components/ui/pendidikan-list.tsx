@@ -1,5 +1,5 @@
 import { pendidikan } from "@/utils/pendidikan";
-import { ListPendidikan } from "./card-pendidikan";
+import { ListPendidikan } from "../card/card-pendidikan";
 
 export default function PendidikanList() {
   return (

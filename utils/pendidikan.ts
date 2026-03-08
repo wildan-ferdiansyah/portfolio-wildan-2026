@@ -1,4 +1,4 @@
-import type { PendidikanData } from "@/components/ui/card-pendidikan";
+import type { PendidikanData } from "@/components/card/card-pendidikan";
 
 const pendidikan: PendidikanData[] = [
   {

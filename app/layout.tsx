@@ -5,6 +5,7 @@ import Container from "@/components/ui/container";
 import Sidebar from "@/components/layouts/sidebar";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import QueryProvider from "@/components/providers/query-provider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -40,12 +41,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <TooltipProvider>
-            <Container>
-              <Sidebar />
-              <div className="w-full">{children}</div>
-            </Container>
-          </TooltipProvider>
+          <QueryProvider> 
+            <TooltipProvider>
+              <Container>
+                <Sidebar />
+                <div className="w-full">{children}</div>
+              </Container>
+            </TooltipProvider>
+          </QueryProvider>
         </ThemeProvider>
       </body>
     </html>

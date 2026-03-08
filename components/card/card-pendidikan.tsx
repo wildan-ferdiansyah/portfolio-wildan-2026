@@ -32,7 +32,7 @@ export function PendidikanCard({ data }: { data: PendidikanData }) {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative overflow-hidden rounded-2xl border border-zinc-200  dark:border-zinc-800 bg-gray-100 dark:bg-zinc-900 p-5 sm:p-6 transition-colors duration-300"
+      className="relative overflow-hidden rounded-2xl border cursor-pointer border-zinc-200  dark:border-zinc-800 bg-gray-100 dark:bg-zinc-900 p-5 sm:p-6 transition-colors duration-300"
       style={{ isolation: "isolate" }}
     >
       {/* Glow (dark mode only) */}
