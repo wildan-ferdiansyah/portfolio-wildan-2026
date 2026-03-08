@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export default function CardKontak({ kontak }: { kontak: Kontak }) {
   return (
-    <Card className={`group w-full max-w-xl bg-muted py-10 shadow-none transition-colors duration-300 ${kontak.cardHoverClass}`}>
+    <Card className={`group w-full max-w-xl border-zinc-200  dark:border-zinc-800 bg-gray-100 dark:bg-zinc-900 py-10 shadow-none transition-colors duration-300 ${kontak.cardHoverClass}`}>
       <CardHeader className="px-8">
         <CardTitle className="mb-1 font-semibold text-3xl tracking-tighter">
           {kontak.name}

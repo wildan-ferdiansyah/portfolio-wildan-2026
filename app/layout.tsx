@@ -8,49 +8,49 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import QueryProvider from "@/components/providers/query-provider";
 
 const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+variable: "--font-inter",
+subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Wildan Ferdiansyah | Portfolio",
-  description: "Personal Portfolio of Wildan Ferdiansyah 2026 Modern",
-  keywords: [
-    "portfolio",
-    "website",
-    "personal",
-    "next js",
-    "modern",
-    "dashboard style portfolio",
-    "2026",
-    "upgrade portfolio",
-  ],
+title: "Wildan Ferdiansyah | Portfolio",
+description: "Personal Portfolio of Wildan Ferdiansyah 2026 Modern",
+keywords: [
+  "portfolio",
+  "website",
+  "personal",
+  "next js",
+  "modern",
+  "dashboard style portfolio",
+  "2026",
+  "upgrade portfolio",
+],
 };
 
 export default function RootLayout({
-  children,
+children,
 }: Readonly<{
-  children: React.ReactNode;
+children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable}  antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <QueryProvider> 
-            <TooltipProvider>
-              <Container>
-                <Sidebar />
-                <div className="w-full">{children}</div>
-              </Container>
-            </TooltipProvider>
-          </QueryProvider>
-        </ThemeProvider>
-      </body>
-    </html>
-  );
+return (
+  <html lang="en" suppressHydrationWarning>
+    <body className={`${inter.variable}  antialiased`}>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <QueryProvider> 
+          <TooltipProvider>
+            <Container>
+              <Sidebar />
+              <div className="w-full">{children}</div>
+            </Container>
+          </TooltipProvider>
+        </QueryProvider>
+      </ThemeProvider>
+    </body>
+  </html>
+);
 }
