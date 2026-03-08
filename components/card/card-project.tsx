@@ -6,7 +6,7 @@ import { Skeleton } from "../ui/skeleton";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 export default function CardProject({project} : {project: Project}) {
-  return (
+return (
     <Link href={project.href} target="_blank">
       <Card className="overflow-hidden max-w-sm hover:scale-105  transition-all duration-300 h-full flex flex-col border-zinc-200 dark:border-zinc-800 group-hover:shadow-xl">
         <div className="relative h-52 w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">
