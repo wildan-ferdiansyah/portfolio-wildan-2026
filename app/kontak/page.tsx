@@ -14,7 +14,7 @@ export default function Kontak() {
         </ul>
       </div>
       <Separator className="my-6" />
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
         {kontaks && kontaks?.map((kontak) => (
           <CardKontak key={kontak.name} kontak={kontak} />
         ))}
