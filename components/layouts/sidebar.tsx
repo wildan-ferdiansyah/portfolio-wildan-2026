@@ -97,7 +97,7 @@ export default function Sidebar() {
                   key={menu.title}
                   onClick={() => setIsOpen(false)} 
                   className={cn(
-                    "group rounded-xl px-4 py-2.5 flex items-center justify-between gap-3 transition-all duration-200 text-sm font-medium",
+                    "group rounded-lg px-4 py-2.5 flex items-center justify-between gap-3 transition-all duration-200 text-sm font-medium",
                     isActive
                       ? "bg-teal-500 text-white shadow-lg shadow-teal-500/20"
                       : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-zinc-100"

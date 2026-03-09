@@ -9,7 +9,7 @@ export default function Beranda() {
         <h1 className="text-3xl font-semibold">
           Hai, saya Muhammad Wildan Ferdiansyah
         </h1>
-        <ul className="flex items-center gap-6 mt-3 text-gray-600 dark:text-gray-400">
+        <ul className="flex md:flex-row flex-col md:items-center items-start md:gap-6 gap-0 mt-3 text-gray-600 dark:text-gray-400">
           <li>Berdomisili di Pekalongan, Indonesia</li>
           <li>Onsite</li>
         </ul>
