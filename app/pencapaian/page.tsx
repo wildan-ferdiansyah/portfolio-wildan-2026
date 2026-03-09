@@ -16,6 +16,33 @@ import { sertifikats } from "@/utils/sertifikat";
 import { useQuery } from "@tanstack/react-query";
 import { FilterX, Search } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import { motion, type Variants } from "framer-motion";
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.06,
+      duration: 0.4,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+};
 
 export default function Pencapaian() {
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -47,14 +74,9 @@ export default function Pencapaian() {
 
   const filteredSertifikats = useMemo(() => {
     return data.filter((s) => {
-      const matchesSearch = s.title
-        .toLowerCase()
-        .includes(searchQuery.toLowerCase());
-      const matchesCompany =
-        selectedCompany === "all" || s.company === selectedCompany;
-      const matchesCategory =
-        selectedCategory === "all" || s.category === selectedCategory;
-
+      const matchesSearch = s.title.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesCompany = selectedCompany === "all" || s.company === selectedCompany;
+      const matchesCategory = selectedCategory === "all" || s.category === selectedCategory;
       return matchesSearch && matchesCompany && matchesCategory;
     });
   }, [data, searchQuery, selectedCompany, selectedCategory]);
@@ -70,16 +92,32 @@ export default function Pencapaian() {
   return (
     <section>
       <div>
-        <h1 className="text-3xl font-semibold">Pencapaian Saya</h1>
-        <ul className="flex items-center gap-6 mt-3 text-gray-600 dark:text-gray-400">
+        <motion.h1
+          className="text-3xl font-semibold"
+          custom={0} initial="hidden" animate="visible" variants={fadeUp}
+        >
+          Pencapaian Saya
+        </motion.h1>
+
+        <motion.ul
+          className="flex items-center gap-6 mt-3 text-gray-600 dark:text-gray-400"
+          custom={1} initial="hidden" animate="visible" variants={fadeUp}
+        >
           <li>
             Daftar sertifikat yang telah saya dapatkan selama karir profesional
             dan akademik
           </li>
-        </ul>
+        </motion.ul>
       </div>
-      <Separator className="my-6" />
-      <div className="mb-5 space-y-3">
+
+      <motion.div custom={2} initial="hidden" animate="visible" variants={fadeUp}>
+        <Separator className="my-6" />
+      </motion.div>
+
+      <motion.div
+        className="mb-5 space-y-3"
+        custom={3} initial="hidden" animate="visible" variants={fadeUp}
+      >
         <p className="dark:text-gray-200 text-zinc-500 text-sm">
           Menampilkan {filteredSertifikats.length} sertifikat
         </p>
@@ -102,33 +140,24 @@ export default function Pencapaian() {
               <SelectContent>
                 <SelectItem value="all">Semua Instansi</SelectItem>
                 {companies.map((c) => (
-                  <SelectItem key={c} value={c}>
-                    {c}
-                  </SelectItem>
+                  <SelectItem key={c} value={c}>{c}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
 
-            <Select
-              value={selectedCategory}
-              onValueChange={setSelectedCategory}
-            >
+            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
               <SelectTrigger className="w-full md:w-45">
                 <SelectValue placeholder="Kategori" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Semua Kategori</SelectItem>
                 {categories.map((cat) => (
-                  <SelectItem key={cat} value={cat}>
-                    {cat}
-                  </SelectItem>
+                  <SelectItem key={cat} value={cat}>{cat}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
 
-            {(searchQuery ||
-              selectedCompany !== "all" ||
-              selectedCategory !== "all") && (
+            {(searchQuery || selectedCompany !== "all" || selectedCategory !== "all") && (
               <Button
                 variant="secondary"
                 onClick={resetFilters}
@@ -139,22 +168,36 @@ export default function Pencapaian() {
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
+
       <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
         {showSkeleton ? (
           sertifikats.map((_, i) => (
             <CardSertifikatSkeleton key={`skeleton-${i}`} />
           ))
         ) : filteredSertifikats.length > 0 ? (
-          filteredSertifikats.map((item) => (
-            <CardSertifikat key={item.id} sertifikats={item} />
+          filteredSertifikats.map((item, i) => (
+            <motion.div
+              key={item.id}
+              custom={i}
+              initial="hidden"
+              animate="visible"
+              variants={cardVariants}
+            >
+              <CardSertifikat sertifikats={item} />
+            </motion.div>
           ))
         ) : (
-          <div className="col-span-full py-20 text-center border-2 border-dashed rounded-xl border-zinc-200 dark:border-zinc-800">
+          <motion.div
+            className="col-span-full py-20 text-center border-2 border-dashed rounded-xl border-zinc-200 dark:border-zinc-800"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+          >
             <p className="text-zinc-500 font-medium">
               Sertifikat tidak ditemukan.
             </p>
-          </div>
+          </motion.div>
         )}
       </div>
     </section>

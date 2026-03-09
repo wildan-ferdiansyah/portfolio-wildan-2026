@@ -15,7 +15,7 @@ export const kontaks: Kontak[] = [
   {
     name: "Instagram",
     description: "Lihat detail tentang saya di Instagram",
-    href: "https://instagram.com/wildanferdd_",
+    href: "https://instagram.com/wildanferddd_",
     icon: <SiInstagram className="w-8 h-8" />,
     colorClass: "group-hover:text-pink-500 group-hover:bg-pink-50 dark:group-hover:bg-pink-500/10 group-hover:border-pink-200 dark:group-hover:border-pink-500/20",
     cardHoverClass: "hover:border-pink-300 dark:hover:border-pink-500/30 hover:shadow-lg hover:shadow-pink-100 dark:hover:shadow-pink-500/5",

@@ -1,5 +1,5 @@
 import React from "react";
-import { SiLaravel, SiLivewire, SiMysql, SiNextdotjs, SiReact, SiShadcnui, SiTailwindcss } from "react-icons/si";
+import { SiBootstrap, SiCodeigniter, SiLaravel, SiLivewire, SiMysql, SiNextdotjs, SiReact, SiShadcnui, SiTailwindcss } from "react-icons/si";
 
 export type Project = {
   id: number | string;
@@ -37,6 +37,18 @@ export const projects: Project[] = [
       { name: "React JS", icon: <SiReact className="w-8 h-8 text-sky-300" /> },
       { name: "Tailwind CSS", icon: <SiTailwindcss className="w-8 h-8 text-blue-500" /> },
       { name: "Shadcn UI", icon: <SiShadcnui className="w-8 h-8 text-zinc-500" /> },
+    ]
+  },
+  {
+    id: 3,
+    image: "/project-3.png",
+    title: "Sistem Point Of Sales (POS) Warmindo",
+    href: "https://github.com/wildan-ferdiansyah/sistem-enterprise-warmindo",
+    description: "Sistem Enterprise yang berfokus pada kebutuhan bisnis Warmindo",
+    tech: [
+      { name: "Codeigniter 4", icon: <SiCodeigniter className="w-8 h-8 text-rose-500" /> },
+      { name: "Bootstrap 5", icon: <SiBootstrap className="w-8 h-8 text-violet-500" /> },
+      { name: "MySQL", icon: <SiMysql className="w-8 h-8 text-sky-600" /> },
     ]
   },
 ]
