@@ -96,7 +96,7 @@ export default function Pencapaian() {
 
           <div className="flex items-center gap-3">
             <Select value={selectedCompany} onValueChange={setSelectedCompany}>
-              <SelectTrigger className="w-full md:w-[200px]">
+              <SelectTrigger className="w-full md:w-50">
                 <SelectValue placeholder="Pilih Instansi" />
               </SelectTrigger>
               <SelectContent>
@@ -113,7 +113,7 @@ export default function Pencapaian() {
               value={selectedCategory}
               onValueChange={setSelectedCategory}
             >
-              <SelectTrigger className="w-full md:w-[180px]">
+              <SelectTrigger className="w-full md:w-45">
                 <SelectValue placeholder="Kategori" />
               </SelectTrigger>
               <SelectContent>
@@ -140,7 +140,7 @@ export default function Pencapaian() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
         {showSkeleton ? (
           sertifikats.map((_, i) => (
             <CardSertifikatSkeleton key={`skeleton-${i}`} />
