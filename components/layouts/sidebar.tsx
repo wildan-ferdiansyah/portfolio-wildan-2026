@@ -108,7 +108,7 @@ export default function Sidebar() {
                       size={18}
                       className={cn(
                         "transition-transform duration-300",
-                        isActive ? "text-white" : "group-hover:-rotate-12"
+                        isActive ? "text-white" : "group-hover:-rotate-45"
                       )}
                     />
                     <span>{menu.title}</span>

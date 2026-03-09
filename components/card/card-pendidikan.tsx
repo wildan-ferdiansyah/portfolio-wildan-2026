@@ -60,7 +60,7 @@ export function PendidikanCard({ data }: { data: PendidikanData }) {
             <h3 className="text-base sm:text-lg font-semibold text-zinc-900 dark:text-zinc-100 leading-tight">
               {data.title}
             </h3>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-0.5">
+            <p className="md:text-sm text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">
               {data.graduate}
               <span className="mx-2 opacity-40">•</span>
               {data.major}
