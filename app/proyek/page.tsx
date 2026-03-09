@@ -23,7 +23,7 @@ export default function Proyek() {
         </ul>
       </div>
       <Separator className="my-6" />
-      <div className="grid grid-cols-2">
+      <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-0 sm:gap-6 gap-4">
         {isLoading ? (
           projects.map((_, i) => (
             <CardProjectSkeleton key={i} />
